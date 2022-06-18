@@ -9,18 +9,18 @@ const pool = mysql.createPool({
     ssl: {
         rejectUnauthorized: false
     }
-})
+});
 
 pool.getConnection((err, connection) => {
-    if (err){
-        console.error('#### error:',err.code);
-        console.error(err.sqlMessage);
-    };
+    if (err) {
+      console.error("#### error:", err.code);
+      console.error(err.sqlMessage);
+    }
 
-    if (connection){
-        connection.release();
-        console.log('Connected to MySQL!');
-    };
+    if (connection) {
+      connection.release();
+      console.log("Connected to MySQL!");
+    }
     return;
 });
 
